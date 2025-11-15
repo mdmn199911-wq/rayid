@@ -1,0 +1,157 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: #0056b3;
+    margin: 0;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-group, .form-group-checkbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label, .form-group-checkbox label {
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.form-group-checkbox {
+    flex-direction: row;
+    align-items: center;
+    grid-column: span 2;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.form-group-checkbox input {
+    width: auto;
+    margin-left: 10px; /* Adjusted for RTL */
+    transform: scale(1.2);
+}
+
+.form-group-checkbox span {
+    color: #777;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #004494;
+}
+
+#result-container {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+#result-container.hidden {
+    display: none;
+}
+
+#result-container h2, #result-container h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+#recommendations-list {
+    list-style-type: none;
+    padding-right: 0; /* Adjusted for RTL */
+}
+
+#recommendations-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#recommendations-list li:last-child {
+    border-bottom: none;
+}
+
+.result-diabetic {
+    background-color: #fff0f0;
+    border-color: #ffb3b3;
+}
+
+.result-not-diabetic {
+    background-color: #f0fff4;
+    border-color: #b3ffc6;
+}
+
+#diagnosis-section, #risk-section {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.diagnosis-diabetic { color: #d90000; }
+.diagnosis-not-diabetic { color: #007a21; }
+
+.risk-High { color: #d90000; }
+.risk-Medium { color: #f5a623; }
+.risk-Low { color: #007a21; }
+
