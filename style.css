@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
 body {
@@ -42,15 +43,14 @@ header p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
-    margin-bottom: 25px; 
 }
 
-.form-group {
+.form-group, .form-group-checkbox {
     display: flex;
     flex-direction: column;
 }
 
-.form-group label {
+.form-group label, .form-group-checkbox label {
     font-weight: 700;
     margin-bottom: 8px;
     color: #555;
@@ -64,37 +64,24 @@ header p {
     box-sizing: border-box;
 }
 
-
-.checkbox-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    gap: 30px; 
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
 .form-group-checkbox {
-    display: flex;
+    flex-direction: row;
     align-items: center;
-    cursor: pointer;
-}
-
-.form-group-checkbox label {
-    font-weight: 700;
-    color: #555;
-    margin: 0 10px 0 0; 
-    cursor: pointer;
+    grid-column: span 2;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
 }
 
 .form-group-checkbox input {
     width: auto;
-    transform: scale(1.3);
-    cursor: pointer;
+    margin-left: 10px; /* Adjusted for RTL */
+    transform: scale(1.2);
 }
 
+.form-group-checkbox span {
+    color: #777;
+}
 
 button[type="submit"] {
     width: 100%;
@@ -133,9 +120,37 @@ button[type="submit"]:hover {
 
 #recommendations-list {
     list-style-type: none;
-    padding-right: 0;
+    padding-right: 0; /* Adjusted for RTL */
 }
 
 #recommendations-list li {
     padding: 8px 0;
-    border-bottom: 1px solid #eee
+    border-bottom: 1px solid #eee;
+}
+
+#recommendations-list li:last-child {
+    border-bottom: none;
+}
+
+.result-diabetic {
+    background-color: #fff0f0;
+    border-color: #ffb3b3;
+}
+
+.result-not-diabetic {
+    background-color: #f0fff4;
+    border-color: #b3ffc6;
+}
+
+#diagnosis-section, #risk-section {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.diagnosis-diabetic { color: #d90000; }
+.diagnosis-not-diabetic { color: #007a21; }
+
+.risk-High { color: #d90000; }
+.risk-Medium { color: #f5a623; }
+.risk-Low { color: #007a21; }
