@@ -97,44 +97,24 @@ def get_risk_and_recommendations(data, prediction):
 
     # Generate Recommendations
     if prediction == 1:
-
-        recommendations.append("استشر أخصائي الرعاية الصحية فوراً للحصول على تشخيص رسمي وخطة علاجية.")
-
+        recommendations.append("Consult a healthcare professional immediately for a formal diagnosis and treatment plan.")
         recommendations.append("It is crucial to monitor your blood sugar levels regularly as advised by your doctor.")
-
     else:
-
         recommendations.append("Your result is negative, which is great news. Maintain a healthy lifestyle to keep it that way.")
 
-
-
     if data['bmi'] >= 30:
-
         recommendations.append("Your BMI indicates obesity. It is highly recommended to consult a doctor or nutritionist to create a weight management plan.")
-
     elif data['bmi'] >= 25:
-
         recommendations.append("Your BMI is in the overweight range. Incorporating regular physical activity and a balanced diet is recommended.")
 
-
-
     if data['hypertension'] == 1:
-
         recommendations.append("Continue to manage your hypertension and follow your doctor's advice.")
 
-
-
     if data['heart_disease'] == 1:
-
         recommendations.append("Given your history of heart disease, a healthy lifestyle is especially important. Continue to follow your cardiologist's recommendations.")
 
-
-
     if not recommendations:
-
         recommendations.append("Maintain a balanced diet and regular exercise. Regular check-ups are always a good practice.")
-
-
 
     return risk_level, recommendations
 
