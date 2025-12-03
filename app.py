@@ -67,7 +67,7 @@ def predict():
         output = int(prediction[0])
 
         # Provide a human-readable diagnosis
-        diagnosis = 'Diabetic' if output == 1 else 'Not Diabetic'
+        diagnosis = 'مصاب بالسكري' if output == 1 else 'غير مصاب بالسكري'
 
         # Get risk level and recommendations
         risk_level, recommendations = get_risk_and_recommendations(data, output)
@@ -89,11 +89,12 @@ def get_risk_and_recommendations(data, prediction):
 
     # Determine Risk Level
     if prediction == 1:
-        risk_level = "High"
+        risk_level = "مرتفع"
     elif data['HbA1c_level'] >= 6.0 or data['blood_glucose_level'] > 140:
-        risk_level = "Medium"
+        risk_level = "متوسط"
     elif data['bmi'] >= 25:
-        risk_level = "Medium"
+        risk_level = "منخفض"
+        
 
     # Generate Recommendations
     if prediction == 1:
