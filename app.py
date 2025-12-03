@@ -97,26 +97,46 @@ def get_risk_and_recommendations(data, prediction):
 
     # Generate Recommendations
     if prediction == 1:
+
         recommendations.append("استشر أخصائي الرعاية الصحية فوراً للحصول على تشخيص رسمي وخطة علاجية.")
-        recommendations.append("من الضروري مراقبة مستويات السكر في الدم بانتظام وفقاً لتعليمات طبيبك.")
+
+        recommendations.append("It is crucial to monitor your blood sugar levels regularly as advised by your doctor.")
+
     else:
-        recommendations.append("نتيجتك سلبية، وهذا خبر رائع. حافظ على نمط حياة صحي لتبقى كذلك.")
+
+        recommendations.append("Your result is negative, which is great news. Maintain a healthy lifestyle to keep it that way.")
+
+
 
     if data['bmi'] >= 30:
-        recommendations.append("مؤشر كتلة الجسم يشير إلى السمنة. يوصى بشدة باستشارة طبيب أو أخصائي تغذية لوضع خطة للتحكم في الوزن.")
+
+        recommendations.append("Your BMI indicates obesity. It is highly recommended to consult a doctor or nutritionist to create a weight management plan.")
+
     elif data['bmi'] >= 25:
-        recommendations.append("مؤشر كتلة الجسم يقع في نطاق الوزن الزائد. يُنصح بإدراج النشاط البدني المنتظم واتباع نظام غذائي متوازن.")
+
+        recommendations.append("Your BMI is in the overweight range. Incorporating regular physical activity and a balanced diet is recommended.")
+
+
 
     if data['hypertension'] == 1:
-        recommendations.append("استمر في متابعة حالة ارتفاع ضغط الدم واتباع نصائح طبيبك.")
+
+        recommendations.append("Continue to manage your hypertension and follow your doctor's advice.")
+
+
 
     if data['heart_disease'] == 1:
-        recommendations.append("نظراً لوجود تاريخ مرضي لأمراض القلب، فإن نمط الحياة الصحي مهم جداً. استمر في اتباع توصيات طبيب القلب.")
 
-   if not recommendations:
-        recommendations.append("حافظ على نظام غذائي متوازن وتمارين منتظمة. الفحوصات الدورية أمر ينصح به دائماً.")
+        recommendations.append("Given your history of heart disease, a healthy lifestyle is especially important. Continue to follow your cardiologist's recommendations.")
 
-   return risk_level, recommendations
+
+
+    if not recommendations:
+
+        recommendations.append("Maintain a balanced diet and regular exercise. Regular check-ups are always a good practice.")
+
+
+
+    return risk_level, recommendations
 
 
 # Main entry point
